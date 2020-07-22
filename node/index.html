@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="style.css"> 
+<div class="js-message message"></div>
+<div style="white-space: pre-wrap;">
+<label id="estado_lb">Estado:</label>
+</div>
+<div style="white-space: pre-wrap;">
+
+<label id="play_lb">Fichero de reproducción:</label>
+</div>
+
+<div style="white-space: pre-wrap;">
+
+<label id="save_lb">Fichero de grabación:</label>
+</div>
+
+
+<div class="recorder">
+  <div class="waveform">
+    <canvas class="js-canvas waveform__canvas" ></canvas>
+  </div>
+  <div class="toolbar">
+    <button class="js-record">Record<i aria-hidden="true"></i></button>
+    <button class="js-play">Play<i aria-hidden="true"></i></button>
+    <button class="js-save">Save<i aria-hidden="true"></i></button>
+    <button class="js-stop">Stop<i aria-hidden="true"></i></button>
+    <input type="file" accept="audio/*" capture="microphone" id="fileChooser">
+    <audio class="js-audio" >
+  </div>
+</div>
+<label for="threshold">Threshold:</label>
+<input type="text" class="input_text" value="0" id="threshold" ><br><br>
+<label for="window">Window size:</label>
+<input type="text" class="input_text" value="0" id="window" ><br><br>
+<label for="percentage">Positive percentage:</label>
+<input type="text" class="input_text" value="0" id="percentage" ><br><br>
+  <textarea id="textarea" class="input_text"  style="width: 100%;height: 300px; font-size: large;" readonly></textarea>
+<script src="recordSystem.js"></script>
+<script src="audioPlotter.js"></script>
+
+
+<script>
+  var fileChooser = document.getElementById('fileChooser'); 
+  var file ;
+  fileChooser.addEventListener('change', function(e) {
+    file = e.target.files[0];
+    getFile(file.path);
+  });
+
+ 
+
+</script>
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<script src="main.js"></script>
+<script src="create_wavesurfer.js"></script>
+<script src="record_audio.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <title>Hello Python from Electron!</title>
+</head>
+<body>
+  <h1>Hello Python!</h1>
+  <div id="waveform" style="width: 100vw;"> </div>
+  <button onclick="wavesurfer.playPause()">Play</button>
+  <button onclick="record()">Record</button>
+  <button onclick="playRecord()">Play recorded</button>
+  <input type="file" accept="audio/*" capture="microphone" id="fileChooser">
+  <button onclick="recordPython()">Record python</button>
+  <button onclick="playPython()">play python</button>
+  
+</body>
+</html>
+<script> 
+  createWaveSurfer()
+  processing()
+  var fileChooser = document.getElementById('fileChooser'); 
+  fileChooser.addEventListener('change', function(e) {
+    var file = e.target.files[0];
+    wavesurfer.load(file.path);
+  });
+</script>

@@ -1,0 +1,26 @@
+# Python
+__pycache__
+audacity
+*.ui
+*.wav
+*.pyc
+.DS_Store
+.*.json
+test.py
+
+# Node 
+node_modules
+package-lock.json
+*.txt
+
+tmp
+*.out
+*.csv
+CSVs
+*.png
+*.BMP
+!requirements.txt
+
+
+# OpenCL 
+OpenCL_Gaussian_Blur
